@@ -5,3 +5,4 @@ ro = tk.Label(text="Python Rocks!")
 ro.pack()
 
 window.mainloop()
+print("H")
