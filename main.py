@@ -1,16 +1,31 @@
 import tkinter as tk
-from tkinter import ttk
+class clas:
+    def __init__(self): #this is what runs when the class is called and makes the window and background
+        self.window = tk.Tk()
+        self.window.geometry("400x300")
+        
+        self.background=tk.Frame(self.window, height=300, width=400, bg="green")
+        self.background.place(relx=0.5, rely=0.5, anchor="center")
 
-window = tk.Tk()
-window.geometry("400x300")
+        self.definition() #this runs the second def in this class
+        self.window.mainloop()
 
-ro = tk.Label(text="Python Rocks!")
-ro.pack()
+    def definition(self): # This is the second def and is only run when you call it. This sets the labels and buttons
+        
+        self.window2 = tk.Label(self.window, text="Your first window!")
+        self.window2.pack()
+        
+        self.bt1=tk.Button(self.window, text="Create new window?", command=clas2)
+        self.bt1.pack()
 
-ret = tk.Label(width="300", height="300")
-ret.pack()
-
-h=ttk.Button(text="Python")
-h.pack()
-
-window.mainloop()
+class clas2: 
+    def __init__(self):#When Clas2 is called it will run this definiton
+        
+        self.window = tk.Tk()
+        self.window.geometry("400x300")
+    
+        self.window2 = tk.Label(self.window, text="Second Window")
+        self.window2.pack()
+        
+        self.window.mainloop()
+clas()
