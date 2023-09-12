@@ -39,4 +39,7 @@ class clas3:
         self.yeet = askstring("Input name", "Input name")
         lisit = [self.yeet]
         print(lisit)
+        
+
+        
 clas()
