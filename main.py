@@ -8,18 +8,19 @@ class clas:
         self.window.geometry("400x300")
         
         self.background = tk.Frame(self.window, height=300, width=400, bg="")
-        self.background.place(relx=0.5, rely=0.5, anchor="center")
+        self.background.place(relx=0.5, rely=0.5, anchor="center")#Purely for decoration
 
-        self.wind = tk.Label(self.window, text="Welcome!")
+        self.fr = tk.Frame(self.window)
+        self.wind = tk.Label(self.fr, text="Welcome!")
         self.wind.pack()
-
-        self.bt1 = tk.Button(self.window, text="Set Username", command = self.definition) #Button to call second def.
+        self.bt1 = tk.Button(self.fr, text="Set Username", command = self.definition) #Button to call the 'definition' def.
         self.bt1.pack()
+        self.bt2 = tk.Button(self.fr, text="Set Username", command = 
+        self.thing) #Button to call the 'thng' def.
+        self.bt2.pack()
+        self.fr.pack()
 
-        self.bt2 = tk.Button(self.window, text="Start", command = clas2)
-        self.bt2.pack() #Calls the second class to create new window.
-
-        self.window.title("First windo")
+        self.window.title("Main Window")#Title of window
 
         self.window.mainloop()
 
@@ -29,18 +30,20 @@ class clas:
         lisit = [self.yeet] #List that holds the username
         print(lisit)
         
-class clas2: 
-    def __init__(self): #When Clas2 is called it will run this definiton (Window 2), This will show a directory for what times tables the User wants to practice.
+    def game(self):
 
-        self.window = tk.Tk()
-        self.window.geometry("400x300")
+        self.fr.destroy()
 
-        self.fretdf.label(text="Times table: ")
-        self.fretdf.
+        self.fretdf.label(selftext="Times table: ")
+        self.fretdf.pack()
         self.fegh()
 
-    def fegh(self):
+    def thing(self):
+
+        self.fr.destroy()
+        
         global entry
         self.fing = entry.get()
         self.entry.config(text = int)
+        self.print(self.fing)
 clas()
