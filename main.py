@@ -1,49 +1,63 @@
 import tkinter as tk
 from tkinter import simpledialog
-from tkinter.simpledialog import askstring 
-class clas:
-    
-    def __init__(self): #this is what runs when the class is called and makes the window and background.
+from tkinter.simpledialog import askstring
+import random
+
+class MyClass:
+    def __init__(self):
+        
         self.window = tk.Tk()
         self.window.geometry("400x300")
-        
-        self.background = tk.Frame(self.window, height=300, width=400, bg="")
-        self.background.place(relx=0.5, rely=0.5, anchor="center")#Purely for decoration
-
-        self.fr = tk.Frame(self.window)
-        self.wind = tk.Label(self.fr, text="Welcome!")
-        self.wind.pack()
-        self.bt1 = tk.Button(self.fr, text="Set Username", command = self.definition) #Button to call the 'definition' def.
+        self.window.title("Main Window")
+    
+        self.background = tk.Frame(self.window, height=300, width=400, bg="green")
+        self.background.place(relx=0.5, rely=0.5, anchor="center")
+    
+        self.fra1 = tk.Frame(self.window)
+        self.lab1 = tk.Label(self.fra1, text="Welcome!")
+        self.lab1.pack()
+    
+        self.bt1 = tk.Button(self.fra1, text="Set Username", command=self.name)
         self.bt1.pack()
-        self.bt2 = tk.Button(self.fr, text="Set Username", command = 
-        self.thing) #Button to call the 'thng' def.
+    
+        self.bt2 = tk.Button(self.fra1, text="Enter", command=self.times_table)
         self.bt2.pack()
-        self.fr.pack()
-
-        self.window.title("Main Window")#Title of window
-
+    
+        self.fra1.pack()
+    
         self.window.mainloop()
-
-    def definition(self): #This is the second def and is only run when you call it (Name input).
-        
+    
+    def name(self):
         self.yeet = askstring("Input name", "Input name")
-        lisit = [self.yeet] #List that holds the username
-        print(lisit)
+        if self.yeet:
+            self.username = self.yeet
+    
+    def times_table(self):
         
-    def game(self):
-
-        self.fr.destroy()
-
-        self.fretdf.label(selftext="Times table: ")
-        self.fretdf.pack()
-        self.fegh()
-
-    def thing(self):
-
-        self.fr.destroy()
+        self.fra1.destroy()
         
-        global entry
-        self.fing = entry.get()
-        self.entry.config(text = int)
-        self.print(self.fing)
-clas()
+        self.fra2 = tk.Frame(self.window)
+        
+        self.ask1 = tk.Entry(self.fra2)
+        self.ask1.focus_set()
+        self.ask1.pack()
+        
+        self.lab2 = tk.Label(self.fra2, text="")
+        self.lab2.pack()
+        
+        self.bt3 = tk.Button(self.fra2, text="enter", command=self.update_label)
+        self.bt3.pack()
+        
+        self.fra2.pack()
+        
+    def update_label(self): #I couldn't understand how '.get' worked so I used Chat Gpt to help me work that out, this being the result.
+        
+        entered_text = self.ask1.get()# A variable named 'entered_text' is created to store the user input received from 'self.ask1'.
+        self.lab2.config(text=entered_text)#This takes the input from entered_text and changes the 'lab2' label to that text.
+
+        if entered_text == "abc":  
+             print("hello")
+            
+obj = MyClass()
+obj.start()
+MyClass()
