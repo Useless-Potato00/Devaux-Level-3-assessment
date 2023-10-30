@@ -66,11 +66,10 @@ class MyClass: # The main class, the games menu.
         
         self.fra2 = tk.Frame(self.window, background="green")
 
-        randy = random.randint(1, 10)
-        randy2 = random.randint(1, 10)
+        randy = random.randint(1, 100)
+        randy2 = random.randint(1, 50)
         self.question = "{}, What is {} + {}?".format(self.username, randy, randy2)
         self.answer = randy + randy2
-        print(self.question, self.answer)
         self.lab3 = tk.Label(self.fra2, text=self.question)
         self.lab3.pack()
         self.ent1 = tk.Entry(self.fra2)
@@ -84,7 +83,7 @@ class MyClass: # The main class, the games menu.
         try:
             self.player_answer = int(self.ent1.get())
             if self.player_answer == self.answer:
-                self.score += 1
+                self.score = self.score + 1
                 self.fra2.destroy()
                 self.fra3 = tk.Frame(self.window, background="green")
                 self.fra3.pack()
@@ -101,9 +100,12 @@ class MyClass: # The main class, the games menu.
                 self.fra2.destroy()
                 self.fra3 = tk.Frame(self.window, background="green")
                 self.fra3.pack()
-                self.lab4 = tk.Label(self.fra3, text="Sorry {}, you got the wrong answer!".format(self.username))
+                self.lab4 = tk.Label(self.fra3, text="""Sorry {}, you got the wrong answer!
+The correct answer was {}.""".format(self.username, self.answer))
                 self.lab4.pack()
                 self.lab5 = tk.Label(self.fra3, text="Your score is {}".format(self.score))
+                self.bt4 = tk.Button(self.fra3, text="Save Game", command=self.save_game)
+                self.bt4.pack()
                 self.bt5 = tk.Button(self.fra3, text="Next Question", command=self.times_table)
                 self.bt5.pack()
                 
