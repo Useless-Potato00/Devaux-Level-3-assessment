@@ -80,7 +80,7 @@ class MyClass: # The main class, the games menu.
         
         self.fra2.pack()
 
-    def cheaking_answer(self): #The questions
+    def cheaking_answer(self): #This cheaks is the player was correct or wrong.
         try:
             self.player_answer = int(self.ent1.get())
             if self.player_answer == self.answer:
